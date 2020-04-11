@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-#追加したgem
+# 追加したgem
 # メモリ上にKey-Valueストア（KVS）を構築することができるソフトウェアの一つ。
 gem 'redis-rails'
 # slim利用テンプレートエンジンで、htmlをより簡潔でセキュア(HTMLエスケープするため)に書ける
@@ -49,7 +49,7 @@ gem 'font-awesome-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # rails consoleコマンドで起動するデフォルトのREPLであるirbの代わってpryを起動
   gem 'pry-rails'
   # ステップ実行できるライブラリ、irbではなくpryを起動
@@ -75,6 +75,5 @@ group :development do
   gem 'rubocop-rails'
 end
 
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
