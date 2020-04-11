@@ -44,6 +44,8 @@ gem 'html2slim'
 gem 'sorcery'
 # 国際化に対応（For 5.0.x, 5.1.x and 5.2.x）
 gem 'rails-i18n', '~> 5.1'
+# Font Awesomeの利用
+gem 'font-awesome-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
