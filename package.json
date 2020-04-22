@@ -1,5 +1,9 @@
 {
   "name": "trn_insta_clone",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap-material-design": "^4.1.2",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1"
+  }
 }
