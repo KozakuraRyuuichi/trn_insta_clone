@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def index
     # postと関連付けされているuserテーブルからデータを取得する
     # 絞り込みを行うため、includesメソッドを選択する
-    @posts = Post.includes(:user).order(created_at: :desc)
+    @posts = Post.all.includes(:user).order(created_at: :desc)
   end
 
   def new
