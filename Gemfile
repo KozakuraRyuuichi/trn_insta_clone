@@ -48,6 +48,8 @@ gem 'rails-i18n', '~> 5.1'
 gem 'font-awesome-sass'
 # carrierwaveを使ってファイルアップロードを実装する
 gem 'carrierwave'
+# 画像のリサイズ
+gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
