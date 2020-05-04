@@ -17,7 +17,8 @@
 #
 class User < ApplicationRecord
   authenticates_with_sorcery!
-  has_many :posts
+  # postsとの関連付け。また、user削除時にpostも削除する
+  has_many :posts, dependent: :destroy
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_pasword] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
