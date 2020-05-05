@@ -22,6 +22,6 @@ class Post < ApplicationRecord
   mount_uploaders :images, PostImageUploader
   serialize :images, JSON
 
-  validates :user_id, presence: true
+  validates :images, presence: true
   validates :content, presence: true, length: { maximum: 500 }
 end
