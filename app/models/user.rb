@@ -27,7 +27,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :username, uniqueness: true, presence: true
 
-  #ユーザーと投稿ユーザーが一致するか
+  # ユーザーと投稿ユーザーが一致するか
   def own?(object)
     id == object.user_id
   end

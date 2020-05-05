@@ -60,7 +60,6 @@ group :development, :test do
   gem 'pry-byebug'
   # 簡単に多種多様なダミーデータをデータベースに投入できるgem
   gem 'faker'
-
 end
 
 group :development do
