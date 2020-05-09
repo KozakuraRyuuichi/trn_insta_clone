@@ -1,6 +1,6 @@
 puts 'Start inserting seed "posts" ...'
-# 50を上限とする
-User.limit(50).each do |user|
+# 100を上限とする
+User.limit(100).each do |user|
   # userと関連付けさせるからこういう記述にする。tutorialの13章参照
   post = user.posts.create(
     content: Faker::Hacker.say_something_smart,
