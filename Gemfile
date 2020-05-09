@@ -50,6 +50,8 @@ gem 'font-awesome-sass'
 gem 'carrierwave'
 # 画像のリサイズ
 gem 'mini_magick'
+# ページネーション機能の追加
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
