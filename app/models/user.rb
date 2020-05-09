@@ -17,6 +17,8 @@
 #
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  # postsとの関連付け。また、user削除時にpostも削除する
+  has_many :posts, dependent: :destroy
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_pasword] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
@@ -24,4 +26,9 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
   validates :username, uniqueness: true, presence: true
+
+  # ユーザーと投稿ユーザーが一致するか
+  def own?(object)
+    id == object.user_id
+  end
 end
