@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to login_path, success: 'ユーザー登録に成功しました'
     else
       flash.now[:danger] = 'ユーザー登録に失敗しました'
-      render new
+      render :new
     end
   end
 

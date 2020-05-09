@@ -46,6 +46,10 @@ gem 'sorcery'
 gem 'rails-i18n', '~> 5.1'
 # Font Awesomeの利用
 gem 'font-awesome-sass'
+# carrierwaveを使ってファイルアップロードを実装する
+gem 'carrierwave'
+# 画像のリサイズ
+gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,6 +58,8 @@ group :development, :test do
   gem 'pry-rails'
   # ステップ実行できるライブラリ、irbではなくpryを起動
   gem 'pry-byebug'
+  # 簡単に多種多様なダミーデータをデータベースに投入できるgem
+  gem 'faker'
 end
 
 group :development do
