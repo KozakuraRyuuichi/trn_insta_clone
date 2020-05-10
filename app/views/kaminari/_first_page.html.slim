@@ -1,0 +1,5 @@
+/ 'link_to_unless'は条件に一致しなかったらリンクを生成するヘルパー
+/ current_page.firstがfalseだった場合に_first_pageが表示される
+/ remooteオプションは、Ajaxでリンクを処理
+li.page-item
+  = link_to_unless current_page.first?, raw(t 'views.pagination.first'), url, remote: remote, class: 'page-link'

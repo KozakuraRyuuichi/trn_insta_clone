@@ -4,8 +4,9 @@ class PostsController < ApplicationController
 
   # postと関連付けされているuserテーブルからデータを取得する
   # 絞り込みを行うため、includesメソッドを選択する
+  # kaminariのページネーション機能を設定
   def index
-    @posts = Post.all.includes(:user).order(created_at: :desc)
+    @posts = Post.all.includes(:user).page(params[:page]).order(created_at: :desc)
   end
 
   # /posts/new

@@ -26,6 +26,9 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
   }
 }
 
@@ -90,4 +93,8 @@ img {
       }
     }
   }
+}
+
+.pagination {
+  justify-content: center;
 }
