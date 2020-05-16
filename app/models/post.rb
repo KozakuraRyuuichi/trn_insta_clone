@@ -24,4 +24,7 @@ class Post < ApplicationRecord
 
   validates :images, presence: true
   validates :content, presence: true, length: { maximum: 500 }
+
+  # commentsとの関連付け。また、post削除時にcommentも削除する
+  has_many :comments, dependent: :destroy
 end
