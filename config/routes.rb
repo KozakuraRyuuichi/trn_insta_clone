@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :users, only: %i[new create]
-  resources :posts
+  # commentはpostに紐付くので親リソースはpostになる
+  resources :posts do
+    resources :commnents, shallow: true
+  end
 end
