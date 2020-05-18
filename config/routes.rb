@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   # commentはpostに紐付くので親リソースはpostになる
   resources :posts do
-    resources :commnents, shallow: true
+    resources :comments, shallow: true
   end
 end
