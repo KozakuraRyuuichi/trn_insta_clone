@@ -1,0 +1,7 @@
+/ jを用いてエスケープ処理することで部分テンプレートを使用できる
+/ .prepend()は先頭に文字列を追加するメソッド
+- if @comment.errors.present?
+  | alert("#{@comment.errors.full_messages.join('\n')}");
+- else
+  | $('.comments-box').prepend("#{j render('comments/comment', comment: @comment)}");
+  | $('.input-comment-body').val('');
