@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
   # params[:comment]のcontentカラム、params[:comment]のpost_idを取得する
   # 1つのpostに対して複数のコメントが紐づいていて、それはcomment.rbが持っているpost_idで繋がっている
   def comment_params
-    params.require(:comment).permit(:content).merge(post_id: params[:post_id]) 
+    params.require(:comment).permit(:content).merge(post_id: params[:post_id])
   end
 
   # params[:comment]のcontentカラムを取得する
