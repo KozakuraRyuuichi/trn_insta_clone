@@ -29,8 +29,12 @@ class PostsController < ApplicationController
   end
 
   # /post/:id
+  # _comments.html.slimの@commnetsで@post.commentを受ける
+  # 投稿フォームで使用するcommentインスタンスを作成
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments.includes(:user).order(created_at: :desc)
+    @comment = Comment.new
   end
 
   # ログインユーザーのみが編集できる

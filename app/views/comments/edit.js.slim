@@ -1,0 +1,4 @@
+/ html()をdivタグに実行すると、htmlタグが()内の内容に書き換えられる
+/ .modal('show)')はモーダルを開くメソッド
+| $("#modal-container").html("#{escape_javascript(render 'modal_form', comment: @comment)}");
+| $("#comment-edit-modal").modal('show');
