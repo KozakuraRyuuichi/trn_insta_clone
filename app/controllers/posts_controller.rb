@@ -4,8 +4,9 @@ class PostsController < ApplicationController
 
   # postと関連付けされているuserテーブルからデータを取得する
   # 絞り込みを行うため、includesメソッドを選択する
+  # kaminariのページネーション機能を設定
   def index
-    @posts = Post.all.includes(:user).order(created_at: :desc)
+    @posts = Post.all.includes(:user).page(params[:page]).order(created_at: :desc)
   end
 
   # /posts/new
@@ -28,8 +29,12 @@ class PostsController < ApplicationController
   end
 
   # /post/:id
+  # _comments.html.slimの@commnetsで@post.commentを受ける
+  # 投稿フォームで使用するcommentインスタンスを作成
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments.includes(:user).order(created_at: :desc)
+    @comment = Comment.new
   end
 
   # ログインユーザーのみが編集できる
