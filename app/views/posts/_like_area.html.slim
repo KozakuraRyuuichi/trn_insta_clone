@@ -1,0 +1,6 @@
+/ ここで使うposthは_post.html.slimのlocals: { post: post}で渡してる
+div id="like_area-#{post.id}"
+  - if current_user.like?(post)
+    = render 'unlike', post: post
+  - else
+    = render 'like', post: post
