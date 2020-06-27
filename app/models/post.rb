@@ -27,4 +27,8 @@ class Post < ApplicationRecord
 
   # commentsとの関連付け。また、post削除時にcommentも削除する
   has_many :comments, dependent: :destroy
+  # 先に中間テーブルとの関連付け
+  # 中間テーブルをlikesテーブルとしてlike_usersでどのuserがlikeしたかを取得する
+  has_many :likes, dependent: :destroy
+  has_many :like_users, through: :likes, source: :user
 end

@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create]
   # commentはpostに紐付くので親リソースはpostになる
-  resources :posts do
-    resources :comments, shallow: true
+  resources :posts, shallow: true do
+    resources :comments
   end
+  resources :likes, only: %i[create destroy]
 end

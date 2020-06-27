@@ -12,6 +12,10 @@
         / 編集ボタン
         = link_to edit_post_path(post) do
           = icon 'far', 'edit', class: 'fa-lg'
+      / ログインユーザーの投稿でなければ表示する
+      - if !current_user&.own?(post)
+        .ml-auto
+          = render 'like_area', post: post
   / 詳細ページ
   = link_to post_path(post) do
     .swiper-container
